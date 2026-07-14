@@ -26,3 +26,4 @@ for i in range(n_test):
 
 test_accuracy = test_correct/n_test
 print(f'=== Accuracy: {test_accuracy:.4f} ===')
+
