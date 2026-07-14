@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 data = np.loadtxt('mnist_train.csv', dtype=int, delimiter=",")
 
 label = data[:,0]
@@ -14,3 +15,6 @@ number = np.reshape(number, (28,28))
 plt.imshow(number, cmap='gray')
 plt.show()
 print(label[random_int])
+
+
+
