@@ -39,3 +39,4 @@ for epoch in range(epochs):
     avg_loss = total_loss/n_samples   
     print(f'=== epoch: {epoch+1}, average loss: {avg_loss:.4f}, accuracy: {accuracy:.4f} ===')
 
+np.savez('trained_weight.npz', W1=W1, B1=B1, W2=W2, B2=B2)
