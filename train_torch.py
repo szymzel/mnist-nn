@@ -25,9 +25,9 @@ class NeuralNet(nn.Module):
 model = NeuralNet()
 
 loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.3)
+optimizer = torch.optim.SGD(model.parameters(), lr=1.1)
 
-epochs = 1000
+epochs = 10000
 
 
 for epoch in range(epochs):
@@ -38,10 +38,12 @@ for epoch in range(epochs):
     optimizer.step()
 
     preds = pred.argmax(dim=1)
-    if epoch % 100 == 0:
+    if epoch % 1000 == 0:
         accuracy = (preds == Y).float().mean()
         
         print(f'---epoch: {epoch}, accuracy: {accuracy}, loss: {loss}---')
 
             
 print(f'---total accuracy: {accuracy}, loss: {loss}---')
+
+torch.save(model.state_dict(), 'model.pth')
